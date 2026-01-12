@@ -254,6 +254,36 @@ body{
   to{opacity:1; transform: translateY(0)}
 }
 
+
+/* --- Interactive tilt / parallax --- */
+.tilt{
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.tilt .mini-list, .tilt .h3, .tilt p{
+  transform: translateZ(0);
+}
+.tilt:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:18px;
+  pointer-events:none;
+  background: radial-gradient(520px 280px at var(--mx, 30%) var(--my, 20%),
+            color-mix(in oklab, var(--accent) 18%, transparent),
+            transparent 60%);
+  opacity:0;
+  transition: opacity .2s ease;
+}
+.tilt:hover:before{
+  opacity:1;
+}
+
+/* Float cards slightly on scroll */
+.parallax-card{
+  will-change: transform;
+}
+
 @media (max-width: 860px){
   .hero-grid{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
