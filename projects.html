@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Othman Alabed</title>
+  <meta name="description" content="Projects by Othman Alabed: Excel analytics workbooks and dashboards." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Othman Alabed</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Projects</h1>
+        <p class="muted">
+          Projects demonstrating Data Analyst skills: data preparation, KPI reporting, pivot-based summaries,
+          and clear visuals in Excel. Each project is documented and reproducible.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card project" id="data-roles">
+          <div class="project-top">
+            <div>
+              <h2 class="h3">Data Roles Analytics (Excel)</h2>
+              <p class="muted">
+                Workbook analyzing data-related roles, salary benchmarks, in-demand skills, and the relationship between skills requested and pay.
+              </p>
+            </div>
+            <span class="badge">Excel</span>
+          </div>
+
+          <div class="project-body">
+            <!-- Optional image: add a screenshot at assets/project-data-roles.png -->
+            <img class="shot" src="assets/project-data-roles.png" alt="Screenshot of Data Roles Analytics workbook" onerror="this.style.display='none'">
+
+            <ul class="bullets">
+              <li>Skills demand analysis (job count by skill)</li>
+              <li>Top skills: average salary vs demand (combo chart)</li>
+              <li>Salary benchmarks across common data roles</li>
+              <li>Skills-per-job vs median salary analysis (scatter + trendline)</li>
+            </ul>
+
+            <div class="actions">
+              <a class="btn primary" target="_blank" rel="noreferrer"
+                 href="https://github.com/Othmanxo/Data-Analytics/tree/1fc5b4ffc4afa8d91195991c6a90035699b44958/Data%20Roles%20Analytics">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" id="salary-dashboard">
+          <div class="project-top">
+            <div>
+              <h2 class="h3">Salary Dashboard (Excel)</h2>
+              <p class="muted">
+                Interactive dashboard with filters and KPIs to explore how salaries vary by role, location, and schedule type.
+              </p>
+            </div>
+            <span class="badge">Excel</span>
+          </div>
+
+          <div class="project-body">
+            <!-- Optional image: add a screenshot at assets/project-salary-dashboard.png -->
+            <img class="shot" src="assets/project-salary-dashboard.png" alt="Screenshot of Salary Dashboard" onerror="this.style.display='none'">
+
+            <ul class="bullets">
+              <li>Dropdown filters (job title, country, schedule type)</li>
+              <li>KPIs (e.g., median salary, posting volume)</li>
+              <li>Comparison charts with highlighted selections</li>
+            </ul>
+
+            <div class="actions">
+              <!-- Replace the link below with your Salary Dashboard repo path if/when you add it -->
+              <a class="btn" target="_blank" rel="noreferrer" href="https://github.com/Othmanxo">
+                Repository (add link)
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p class="muted">© <span id="year"></span> Othman Alabed</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
