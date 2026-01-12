@@ -19,4 +19,34 @@
       }
     });
   }
+
+  // Scroll reveal (subtle)
+  const candidates = [
+    ".page-head",
+    ".section-head",
+    ".card",
+    ".mini-item",
+    ".hero h1",
+    ".hero .lead",
+    ".hero .cta"
+  ];
+  const nodes = document.querySelectorAll(candidates.join(","));
+  nodes.forEach(n => n.classList.add("reveal"));
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    nodes.forEach(n => io.observe(n));
+  } else {
+    // Fallback: no observer support
+    nodes.forEach(n => n.classList.add("in"));
+  }
+
 })();
