@@ -429,3 +429,22 @@ figure.card{margin:0}
 figcaption{margin-top:10px;color:var(--muted);font-size:14px}
 @media (max-width: 980px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 620px){.kpi-grid,.gallery-grid{grid-template-columns:1fr}.gallery-grid .wide{grid-column:auto}}
+
+
+/* ===== Power BI project PDF-only adjustments ===== */
+.project-file-banner{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px;
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  background: color-mix(in oklab, var(--panel) 88%, transparent);
+}
+.project-file-banner strong{color:var(--text)}
+.project-file-banner span{color:var(--muted);font-size:14px}
+.pdf-summary-card{display:flex;flex-direction:column;gap:10px}
+.pdf-summary-card .mini-list{margin-top:0}
+.dashboard-pdf-wrap{margin-top:10px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
+@media (max-width: 720px){.pdf-frame{height:64vh}}

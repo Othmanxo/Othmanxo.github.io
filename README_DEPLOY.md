@@ -17,8 +17,7 @@ This folder contains a multi-page portfolio site (static HTML/CSS/JS) intended t
 ## Optional improvements
 
 - Add a resume PDF at the repo root named: `Othman_Alabed_Resume.pdf`
-- Add project screenshots:
-  - `assets/project-data-roles.png`
-  - `assets/project-salary-dashboard.png`
+- Add image previews for non-Power BI projects only if needed. The Power BI project uses the PDF export directly.
 
-(If screenshots are not present, the site hides the image blocks automatically.)
+## PDF-only dashboard visuals
+The Power BI dashboard visuals are linked and embedded from `projects/powerbi-sql-pizza-sales/files/PizzaProject.pdf`. Separate dashboard image exports are not included.

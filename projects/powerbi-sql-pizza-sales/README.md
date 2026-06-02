@@ -7,11 +7,14 @@ https://othmanxo.github.io/projects/powerbi-sql-pizza-sales/
 
 ## Main files
 - `index.html`: portfolio project page
-- `assets/dashboard-preview.png`: visual preview image
-- `files/PizzaProject.pdf`: dashboard PDF export
+- `files/PizzaProject.pdf`: Power BI dashboard PDF export used for the visual report preview
 - `data/pizza_sales.csv`: source dataset
 - `files/PizzaProject.pbit`: Power BI template
 - `sql/pizza_sales_queries.sql`: cleaned SQL query file
+- `files/Pizza_Sales_SQL_Queries.docx`: original SQL documentation
+
+## Note on visuals
+No separate dashboard image exports are included. The project page links to and embeds `PizzaProject.pdf` for the dashboard visuals.
 
 ## Key metrics
 - Total revenue: $817,860.05

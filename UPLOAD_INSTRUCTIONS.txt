@@ -1,7 +1,7 @@
 HOW TO PASTE THIS INTO YOUR GITHUB PAGES REPOSITORY
 
 1. Download and unzip this file.
-2. Copy all files/folders inside `paste_into_repo/` into the root of your `othmanxo.github.io` repository.
+2. Copy all files/folders inside this ZIP into the root of your `othmanxo.github.io` repository.
 3. Allow it to replace/overwrite:
    - index.html
    - projects.html
@@ -19,4 +19,7 @@ HOW TO PASTE THIS INTO YOUR GITHUB PAGES REPOSITORY
 
 Note: GitHub Pages can take a few minutes to update after pushing.
 
-Included now: the dashboard PDF export is available at projects/powerbi-sql-pizza-sales/files/PizzaProject.pdf and linked from the project page.
+Dashboard visuals are handled through the PDF only:
+projects/powerbi-sql-pizza-sales/files/PizzaProject.pdf
+
+No separate dashboard image exports are included in this adjusted version.

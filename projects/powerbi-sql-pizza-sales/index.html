@@ -6,7 +6,7 @@
   <title>Power BI & SQL Pizza Sales Analysis | Othman Alabed</title>
   <meta name="description" content="Power BI and SQL pizza sales dashboard project by Othman Alabed: KPI reporting, sales trends, best and worst sellers, category and size performance." />
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../assets/styles.css?v=5" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=6" />
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -49,8 +49,18 @@
             <span class="chip">Data Storytelling</span>
           </div>
         </div>
-        <aside class="card highlight project-preview-card">
-          <img class="shot" src="assets/dashboard-preview.png" alt="Dashboard preview for the Power BI and SQL pizza sales project">
+        <aside class="card highlight project-preview-card pdf-summary-card">
+          <h2 class="h3">Dashboard PDF Export</h2>
+          <p class="muted">
+            The visual report is included as a two-page PDF export from Power BI. No separate dashboard image exports are used on this page.
+          </p>
+          <div class="mini-list">
+            <span class="mini-item"><span class="mini-title">Page 1</span><span class="mini-sub">KPIs, daily/monthly trends, category and size performance</span></span>
+            <span class="mini-item"><span class="mini-title">Page 2</span><span class="mini-sub">Best sellers and worst sellers by revenue, quantity, and orders</span></span>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="files/PizzaProject.pdf" target="_blank" rel="noopener">Open PDF</a>
+          </div>
         </aside>
       </div>
     </section>
@@ -155,13 +165,14 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <h2>Dashboard Insight Snapshots</h2>
-          <p class="muted">Screenshots exported from the Power BI report to document the visual findings.</p>
+          <h2>Dashboard PDF Preview</h2>
+          <p class="muted">Embedded directly from the Power BI PDF export. Open the PDF for the full two-page report.</p>
         </div>
-        <div class="gallery-grid">
-          <figure class="card"><img class="shot" src="assets/trend-insights.png" alt="Power BI trend insights screenshot"><figcaption>Order timing and monthly trend insights.</figcaption></figure>
-          <figure class="card"><img class="shot" src="assets/category-size-insights.png" alt="Power BI category and size insights screenshot"><figcaption>Category and size contribution insights.</figcaption></figure>
-          <figure class="card wide"><img class="shot" src="assets/best-worst-sellers.png" alt="Power BI best and worst sellers screenshot"><figcaption>Best and worst sellers summary.</figcaption></figure>
+        <div class="pdf-wrap dashboard-pdf-wrap">
+          <iframe class="pdf-frame" src="files/PizzaProject.pdf#toolbar=1&navpanes=0&view=FitH" title="Pizza Sales Power BI dashboard PDF"></iframe>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="files/PizzaProject.pdf" target="_blank" rel="noopener">Open Dashboard PDF</a>
         </div>
       </div>
     </section>
