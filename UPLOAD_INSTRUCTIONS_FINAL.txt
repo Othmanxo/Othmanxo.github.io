@@ -1,0 +1,19 @@
+FINAL COPY-PASTE PACKAGE FOR othmanxo.github.io
+
+1. Unzip this file.
+2. Open the unzipped folder.
+3. Copy EVERYTHING inside the folder.
+4. Paste it into the root of your local othmanxo.github.io repository.
+5. Allow files to replace/merge when asked.
+6. Run:
+
+   git add .
+   git commit -m "Update portfolio, resume, and Power BI SQL project"
+   git push
+
+This package includes:
+- Updated home/about/resume/projects/contact pages
+- Updated full CV in PDF and DOCX: assets/Othman_Alabed_CV.pdf and assets/Othman_Alabed_CV.docx
+- Power BI + SQL Pizza Sales project page
+- Dashboard PDF only; no separate dashboard screenshot exports
+- Dataset, SQL file, Power BI template, and SQL documentation

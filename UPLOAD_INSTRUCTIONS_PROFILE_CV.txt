@@ -1,0 +1,22 @@
+PASTE THESE FILES INTO YOUR othmanxo.github.io REPOSITORY ROOT
+
+This update changes your website text from “MIS student” to “MIS graduate” / Data Analyst positioning and replaces the resume PDF.
+
+Files included:
+- index.html
+- about.html
+- resume.html
+- assets/Othman_Alabed_CV.pdf
+
+How to upload:
+1. Open your local othmanxo.github.io folder.
+2. Copy all files/folders from this ZIP into the repo root.
+3. Replace existing files when asked.
+4. Run:
+   git add .
+   git commit -m "Update profile about section and resume"
+   git push
+
+Then check:
+https://othmanxo.github.io/about.html
+https://othmanxo.github.io/resume.html

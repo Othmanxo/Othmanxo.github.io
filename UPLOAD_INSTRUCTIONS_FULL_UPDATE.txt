@@ -1,0 +1,24 @@
+FULL UPDATE INSTRUCTIONS
+
+This package contains the updated GitHub Pages portfolio with:
+- Updated About positioning: MIS Graduate, Data Analyst, Business Analyst, BI/analytics focus
+- Updated Resume page
+- Updated CV PDF: assets/Othman_Alabed_CV.pdf
+- Updated CV DOCX: assets/Othman_Alabed_CV.docx
+- Power BI + SQL Pizza Sales project page
+- Pizza Sales project files, PDF dashboard, SQL documentation, dataset, and PBIT
+
+How to publish:
+1. Open your local othmanxo.github.io repository folder.
+2. Paste all files/folders from this package into the repo root.
+3. Replace existing files when asked.
+4. Run:
+
+   git add .
+   git commit -m "Update portfolio, resume, and Power BI SQL project"
+   git push
+
+Then check:
+https://othmanxo.github.io/
+https://othmanxo.github.io/resume.html
+https://othmanxo.github.io/projects/powerbi-sql-pizza-sales/
