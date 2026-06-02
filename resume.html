@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume | Othman Alabed</title>
+  <meta name="description" content="Resume of Othman Alabed (viewable PDF)." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=4" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Othman Alabed</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a class="active" href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Resume</h1>
+        <p class="muted">
+          View the resume below. If your browser does not display embedded PDFs, use the button to open it in a new tab.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="assets/Othman_Alabed_CV.pdf" target="_blank" rel="noreferrer">Open PDF in New Tab</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <div class="pdf-wrap" role="region" aria-label="Embedded resume PDF">
+            <iframe class="pdf-frame"
+              src="assets/Othman_Alabed_CV.pdf#view=FitH"
+              title="Othman Alabed Resume PDF">
+            </iframe>
+          </div>
+
+          <p class="muted" style="margin-top:12px">
+            If the embed is not working on mobile, tap “Open PDF in New Tab”.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p class="muted">© <span id="year"></span> Othman Alabed</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js?v=4"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@ https://othmanxo.github.io/projects/powerbi-sql-pizza-sales/
 ## Main files
 - `index.html`: portfolio project page
 - `assets/dashboard-preview.png`: visual preview image
+- `files/PizzaProject.pdf`: dashboard PDF export
 - `data/pizza_sales.csv`: source dataset
 - `files/PizzaProject.pbit`: Power BI template
 - `sql/pizza_sales_queries.sql`: cleaned SQL query file

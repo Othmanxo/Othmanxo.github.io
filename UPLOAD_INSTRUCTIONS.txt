@@ -18,3 +18,5 @@ HOW TO PASTE THIS INTO YOUR GITHUB PAGES REPOSITORY
    https://othmanxo.github.io/projects/powerbi-sql-pizza-sales/
 
 Note: GitHub Pages can take a few minutes to update after pushing.
+
+Included now: the dashboard PDF export is available at projects/powerbi-sql-pizza-sales/files/PizzaProject.pdf and linked from the project page.
