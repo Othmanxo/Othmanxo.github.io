@@ -398,3 +398,34 @@ body{
   .grid-2{grid-template-columns:1fr}
   h1{font-size:38px}
 }
+
+
+/* ===== Power BI + SQL project page additions ===== */
+.project-hero .project-preview-card{padding:10px;overflow:hidden}
+.project-hero .project-preview-card .shot{margin:0;border-radius:14px}
+.kpi-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.kpi-card{display:flex;flex-direction:column;gap:8px;min-height:150px}
+.kpi-card img{width:40px;height:40px;object-fit:contain}
+.kpi-card span{color:var(--muted);font-size:14px}
+.kpi-card strong{font-size:26px;line-height:1;color:var(--text)}
+.kpi-card small{color:var(--muted)}
+.analysis-card{overflow:hidden}
+.section-head.compact{margin-bottom:16px}
+.section-head.compact h2{font-size:20px;margin-bottom:4px}
+.bar-row{margin:12px 0}
+.bar-label{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:14px;margin-bottom:6px}
+.bar-label strong{color:var(--text);font-weight:700}
+.bar-track{height:12px;border-radius:999px;background:color-mix(in oklab, var(--panel) 72%, black);border:1px solid var(--line);overflow:hidden}
+.bar-track span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),color-mix(in oklab, var(--accent) 55%, white))}
+.table-card{overflow:auto}
+.table-card h3{margin:0 0 12px}
+table{width:100%;border-collapse:collapse;font-size:14px;color:var(--muted)}
+th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{color:var(--text);font-weight:800}
+td:last-child,th:last-child{text-align:right;color:var(--text)}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.gallery-grid .wide{grid-column:1 / -1;max-width:620px;margin-inline:auto}
+figure.card{margin:0}
+figcaption{margin-top:10px;color:var(--muted);font-size:14px}
+@media (max-width: 980px){.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 620px){.kpi-grid,.gallery-grid{grid-template-columns:1fr}.gallery-grid .wide{grid-column:auto}}
