@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Othman Alabed</title>
-  <meta name="description" content="Projects by Othman Alabed: Power BI, SQL, Excel analytics workbooks, and dashboards." />
+  <meta name="description" content="Projects by Othman Alabed: Power BI, SQL, Excel analytics workbooks, Tableau dashboards, and more." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css?v=6" />
 </head>
@@ -31,13 +31,14 @@
         <h1>Projects</h1>
         <p class="muted">
           Projects demonstrating Data Analyst skills: data preparation, SQL analysis, KPI reporting, Power BI dashboards,
-          pivot-based summaries, and clear visuals. Each project is documented and reproducible.
+          Tableau dashboards, pivot-based summaries, and clear visuals. Each project is documented and reproducible.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
+
         <article class="card project" id="pizza-sales">
           <div class="project-top">
             <div>
@@ -64,6 +65,34 @@
             <div class="actions">
               <a class="btn primary" href="projects/powerbi-sql-pizza-sales/">View Project</a>
               <a class="btn" href="projects/powerbi-sql-pizza-sales/sql/pizza_sales_queries.sql">SQL Queries</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" id="tableau-sales-dashboard">
+          <div class="project-top">
+            <div>
+              <h2 class="h3">Tableau Sales & Customer Dashboard</h2>
+              <p class="muted">
+                Two-dashboard Tableau workbook analyzing 2023 vs. 2022 performance across sales, profit, quantity, customer acquisition, and order behaviour using the Superstore dataset.
+              </p>
+            </div>
+            <span class="badge">Tableau</span>
+          </div>
+
+          <div class="project-body">
+            <img class="shot" src="assets/project-tableau-sales.png" alt="Screenshot of Tableau Sales Dashboard" onerror="this.style.display='none'">
+
+            <ul class="bullets">
+              <li>Sales Dashboard: $356M revenue, $641M profit, 12.5K units — all up YoY</li>
+              <li>KPI sparklines with highest/lowest month markers and prior-year overlay</li>
+              <li>Sales & Profit by Subcategory with profit/loss breakdown per product line</li>
+              <li>Customer Dashboard: 693 customers, 1.7K orders, top 10 by profit</li>
+              <li>Customer distribution by order frequency and sales-per-customer KPI</li>
+            </ul>
+
+            <div class="actions">
+              <a class="btn primary" href="projects/tableau-sales-customer-dashboard/">View Project</a>
             </div>
           </div>
         </article>
@@ -119,12 +148,13 @@
             </ul>
 
             <div class="actions">
-              <!-- Replace the link below with your Salary Dashboard repo path if/when you add it -->
-              <a class="btn primary" target="_blank" rel="noreferrer" href="https://github.com/Othmanxo/Data-Analytics/tree/1fc5b4ffc4afa8d91195991c6a90035699b44958/Data%20Salary%20DashBoard"
-                >View on GitHub</a>
+              <a class="btn primary" target="_blank" rel="noreferrer" href="https://github.com/Othmanxo/Data-Analytics/tree/1fc5b4ffc4afa8d91195991c6a90035699b44958/Data%20Salary%20DashBoard">
+                View on GitHub
+              </a>
             </div>
           </div>
         </article>
+
       </div>
     </section>
   </main>
