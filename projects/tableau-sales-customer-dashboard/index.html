@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tableau Sales &amp; Customer Dashboard | Othman Alabed</title>
+  <meta name="description" content="Tableau Sales and Customer Dashboard project by Othman Alabed: 2023 sales KPIs, profit trends, customer analytics, and packaged Tableau workbook." />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/styles.css?v=7" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../../index.html">Othman Alabed</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="../../index.html">Home</a>
+        <a class="active" href="../../projects.html">Projects</a>
+        <a href="../../about.html">About</a>
+        <a href="../../resume.html">Resume</a>
+        <a href="../../contact.html">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero project-hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Tableau &bull; Sales Analytics &bull; Customer Analytics &bull; KPI Reporting</p>
+          <h1>Tableau Sales &amp; Customer Dashboard</h1>
+          <p class="lead">
+            A Tableau business intelligence project analyzing 2023 sales and customer performance against the previous year,
+            with KPI summaries, subcategory performance, trend views, customer distribution, and top-customer profit insights.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="files/SalesDashboard.pdf" target="_blank" rel="noopener">View Dashboard PDF</a>
+            <a class="btn" href="files/Tableau_Sales_Dashboard_Project.twbx">Download Tableau Workbook</a>
+            <a class="btn" href="#dashboard-views">Dashboard Views</a>
+          </div>
+          <div class="meta-row">
+            <span class="chip">Business Intelligence</span>
+            <span class="chip">Tableau Workbook</span>
+            <span class="chip">Sales Reporting</span>
+            <span class="chip">Customer Insights</span>
+          </div>
+        </div>
+
+        <aside class="card highlight project-preview-card tableau-preview-card">
+          <img class="shot dashboard-shot" src="assets/sales-dashboard.png" alt="Sales dashboard overview in Tableau" loading="eager">
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>2023 KPI Snapshot</h2>
+          <p class="muted">Main dashboard measures comparing 2023 performance against the previous year.</p>
+        </div>
+        <div class="tableau-metric-grid">
+          <article class="card tableau-metric-card"><span>Total Sales</span><strong>$356M</strong><small>15.01% above previous year</small></article>
+          <article class="card tableau-metric-card"><span>Total Profit</span><strong>$641M</strong><small>30.30% above previous year</small></article>
+          <article class="card tableau-metric-card"><span>Total Quantity</span><strong>12.5K</strong><small>26.83% above previous year</small></article>
+          <article class="card tableau-metric-card"><span>Total Customers</span><strong>693</strong><small>8.62% above previous year</small></article>
+          <article class="card tableau-metric-card"><span>Sales Per Customer</span><strong>$513K</strong><small>5.88% above previous year</small></article>
+          <article class="card tableau-metric-card"><span>Total Orders</span><strong>1.7K</strong><small>28.29% above previous year</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section subtle" id="dashboard-views">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dashboard Views</h2>
+          <p class="muted">The workbook includes dedicated views for sales performance and customer performance.</p>
+        </div>
+        <div class="gallery-grid dashboard-gallery">
+          <figure class="card">
+            <img class="shot dashboard-shot" src="assets/sales-dashboard.png" alt="Tableau sales dashboard showing sales, profit, quantity, subcategory performance, and trends" loading="lazy">
+            <figcaption>Sales Dashboard: sales, profit, quantity, subcategory performance, and trend comparison.</figcaption>
+          </figure>
+          <figure class="card">
+            <img class="shot dashboard-shot" src="assets/customer-dashboard.png" alt="Tableau customer dashboard showing customer count, sales per customer, orders, distribution, and top customers" loading="lazy">
+            <figcaption>Customer Dashboard: total customers, sales per customer, orders, distribution, and top customers.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 class="h3">Analysis Coverage</h2>
+          <ul class="bullets">
+            <li>Sales, profit, and quantity KPI tracking with current-year versus previous-year comparison.</li>
+            <li>Subcategory-level sales and profit analysis to identify stronger and weaker product areas.</li>
+            <li>Sales and profit trend views highlighting above-average and below-average periods.</li>
+            <li>Customer distribution by number of orders and top customers ranked by profit.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2 class="h3">Workbook Details</h2>
+          <ul class="bullets">
+            <li>Built in Tableau with two dashboard tabs: Sales Dashboard and Customer Dashboard.</li>
+            <li>Packaged workbook includes a Hyper extract and source tables for orders, customers, products, and location.</li>
+            <li>Uses a year selection parameter set to 2023 for current-year KPI comparisons.</li>
+            <li>Includes dashboard navigation and filter controls for category, subcategory, region, state, and city.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section subtle">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dashboard PDF Preview</h2>
+          <p class="muted">Embedded from the provided Tableau dashboard PDF export.</p>
+        </div>
+        <div class="pdf-wrap dashboard-pdf-wrap">
+          <iframe class="pdf-frame" src="files/SalesDashboard.pdf#toolbar=1&navpanes=0&view=FitH" title="Tableau sales and customer dashboard PDF"></iframe>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="files/SalesDashboard.pdf" target="_blank" rel="noopener">Open Dashboard PDF</a>
+          <a class="btn" href="files/Tableau_Sales_Dashboard_Project.twbx">Download Tableau Workbook</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card">
+          <h2 class="h3">Business Value</h2>
+          <ul class="bullets">
+            <li>Supports sales performance monitoring through clear KPI comparison against the previous year.</li>
+            <li>Helps identify product subcategories that drive sales and profit outcomes.</li>
+            <li>Highlights customer concentration and ordering patterns for better follow-up and retention decisions.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2 class="h3">Files Included</h2>
+          <ul class="bullets">
+            <li><a href="files/SalesDashboard.pdf" target="_blank" rel="noopener">Dashboard PDF export (.pdf)</a></li>
+            <li><a href="files/Tableau_Sales_Dashboard_Project.twbx">Packaged Tableau workbook (.twbx)</a></li>
+            <li><a href="assets/sales-dashboard.png">Sales dashboard screenshot (.png)</a></li>
+            <li><a href="assets/customer-dashboard.png">Customer dashboard screenshot (.png)</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p class="muted">&copy; <span id="year"></span> Othman Alabed</p>
+      <p class="muted"><a href="../../projects.html">Back to projects</a></p>
+    </div>
+  </footer>
+
+  <script src="../../assets/main.js?v=4"></script>
+</body>
+</html>
