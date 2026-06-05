@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Othman Alabed</title>
+  <meta name="description" content="About Othman Alabed — Data Analyst focused MIS student." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=6" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Othman Alabed</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>About</h1>
+        <p class="muted">Written for recruiters and graduate admissions—clear, factual, and outcomes-focused.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 class="h3">Profile</h2>
+
+          <picture class="profile-wrap">
+            <source srcset="assets/profile.webp" type="image/webp">
+            <img class="profile" src="assets/profile.jpg" alt="Othman Alabed" loading="lazy" decoding="async"
+                 onerror="this.style.display='none'">
+          </picture>
+
+          <p class="muted">
+            I am an MIS student based in Doha, Qatar, positioning myself as a Data Analyst. I focus on analytics projects that turn raw datasets into
+            structured insights, KPIs, and dashboards that support decision-making.
+          </p>
+          <p class="muted">
+            My strengths are Excel analytics (pivot-style summaries, dashboard design, and KPI reporting) and Python foundations for data analysis
+            (Pandas/NumPy in Jupyter). I prioritize clarity, documentation, and accuracy.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 class="h3">Highlights</h2>
+          <ul class="bullets">
+            <li>Excel dashboards and pivot-based reporting</li>
+            <li>KPI definition, aggregation logic, and insight communication</li>
+            <li>Python foundations for data analysis (Pandas/NumPy)</li>
+            <li>Clear documentation and stakeholder-ready outputs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section subtle">
+      <div class="container">
+        <div class="section-head">
+          <h2>Current focus</h2>
+          <p class="muted">Strengthening my analytics portfolio and preparing for data analyst opportunities.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Excel</h3>
+            <p class="muted">Dashboards, pivot summaries, KPI reporting, and clean visual storytelling.</p>
+          </div>
+          <div class="card">
+            <h3>Python</h3>
+            <p class="muted">Foundations in data analysis and automation with Pandas/NumPy.</p>
+          </div>
+          <div class="card">
+            <h3>Communication</h3>
+            <p class="muted">Clear documentation and concise explanations for non-technical audiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p class="muted">© <span id="year"></span> Othman Alabed</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js?v=4"></script>
+</body>
+</html>
