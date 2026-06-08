@@ -360,11 +360,20 @@
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
-    const state = { width: 0, height: 0, dpr: 1, time: 0, pointerX: 0.5, pointerY: 0.5 };
+    const state = {
+      width: 0,
+      height: 0,
+      dpr: 1,
+      time: 0,
+      pointerX: 0.5,
+      pointerY: 0.5,
+      lastFrame: 0,
+      visible: true
+    };
     const resize = () => {
-      state.dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
       state.width = window.innerWidth;
       state.height = window.innerHeight;
+      state.dpr = Math.max(1, Math.min(state.width < 720 ? 1 : 1.2, window.devicePixelRatio || 1));
       canvas.width = Math.floor(state.width * state.dpr);
       canvas.height = Math.floor(state.height * state.dpr);
       canvas.style.width = state.width + "px";
@@ -380,9 +389,9 @@
     const drawChannel = (color, xShift, yShift, opacity, width) => {
       const minSide = Math.max(1, Math.min(state.width, state.height));
       const baseY = state.height * 0.48 + yShift * minSide;
-      const xScale = 2.05 + (state.pointerX - 0.5) * 0.55;
-      const yScale = 0.16 + (state.pointerY - 0.5) * 0.045;
-      const distortion = 0.065;
+      const xScale = 1.95 + (state.pointerX - 0.5) * 0.38;
+      const yScale = 0.15 + (state.pointerY - 0.5) * 0.035;
+      const distortion = 0.055;
       const gradient = ctx.createLinearGradient(0, baseY - minSide * 0.22, state.width, baseY + minSide * 0.22);
       gradient.addColorStop(0, "rgba(0,0,0,0)");
       gradient.addColorStop(0.18, color.replace("1)", "0.08)"));
@@ -397,16 +406,16 @@
       ctx.lineJoin = "round";
       ctx.lineCap = "round";
       ctx.shadowColor = color.replace("1)", "0.55)");
-      ctx.shadowBlur = 18;
+      ctx.shadowBlur = 10;
       ctx.beginPath();
-      for (let x = -90; x <= state.width + 90; x += 7) {
+      for (let x = -90; x <= state.width + 90; x += 14) {
         const p = ((x * 2) - state.width) / minSide;
         const d = Math.abs(p) * distortion;
         const rx = p * (1 + d) + xShift + (state.pointerX - 0.5) * 0.16;
         const y = baseY
           + Math.sin((rx + state.time) * xScale) * minSide * yScale
-          + Math.sin((rx * 2.6 - state.time * 1.15) + yShift * 4) * minSide * 0.032
-          + (state.pointerY - 0.5) * 26;
+          + Math.sin((rx * 2.2 - state.time * 1.05) + yShift * 4) * minSide * 0.026
+          + (state.pointerY - 0.5) * 20;
         if (x <= -90) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
@@ -414,27 +423,43 @@
       ctx.restore();
     };
 
-    const draw = () => {
-      state.time += 0.013;
+    const draw = (timestamp) => {
+      const targetFrameMs = state.width < 720 ? 50 : 34;
+      if (!state.visible) return;
+      if (state.lastFrame && timestamp - state.lastFrame < targetFrameMs) {
+        window.requestAnimationFrame(draw);
+        return;
+      }
+
+      const delta = state.lastFrame ? Math.min(48, timestamp - state.lastFrame) : targetFrameMs;
+      state.lastFrame = timestamp;
+      state.time += delta * 0.00036;
       ctx.clearRect(0, 0, state.width, state.height);
       ctx.fillStyle = "rgba(0,0,0,0.08)";
       ctx.fillRect(0, 0, state.width, state.height);
 
-      const layers = [-0.18, -0.09, 0, 0.09, 0.18];
+      const layers = state.width < 720 ? [-0.08, 0.08] : [-0.11, 0, 0.11];
       layers.forEach((layer, index) => {
-        const fade = 0.58 - Math.abs(layer) * 1.4;
-        drawChannel("rgba(255,70,70,1)", -0.056, layer, Math.max(0.08, fade * 0.38), 1.15 + index * 0.08);
-        drawChannel("rgba(70,255,180,1)", 0, layer, Math.max(0.10, fade * 0.42), 1.2 + index * 0.08);
-        drawChannel("rgba(68,150,255,1)", 0.056, layer, Math.max(0.08, fade * 0.38), 1.15 + index * 0.08);
+        const fade = 0.5 - Math.abs(layer) * 1.3;
+        drawChannel("rgba(255,70,70,1)", -0.05, layer, Math.max(0.07, fade * 0.34), 1 + index * 0.08);
+        drawChannel("rgba(70,255,180,1)", 0, layer, Math.max(0.09, fade * 0.38), 1.08 + index * 0.08);
+        drawChannel("rgba(68,150,255,1)", 0.05, layer, Math.max(0.07, fade * 0.34), 1 + index * 0.08);
       });
 
       window.requestAnimationFrame(draw);
     };
 
     resize();
-    draw();
+    window.requestAnimationFrame(draw);
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", pointer, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+      state.visible = !document.hidden;
+      if (state.visible) {
+        state.lastFrame = 0;
+        window.requestAnimationFrame(draw);
+      }
+    });
   };
 
   initPointerEffects();
