@@ -18,6 +18,7 @@
     "Data Analyst • Tableau • Power BI • SQL • Excel Dashboards": "محلل بيانات • Tableau • Power BI • SQL • لوحات Excel",
     "Data Analyst Portfolio": "ملف أعمال محلل بيانات",
     "I analyze data to produce reliable insights, KPIs, and clear dashboards. My work focuses on practical reporting using Tableau, SQL, Power BI, Excel, and Python foundations to support decision-making.": "أحلل البيانات لإنتاج رؤى موثوقة، ومؤشرات أداء واضحة، ولوحات معلومات تساعد على اتخاذ القرار. يركز عملي على التقارير العملية باستخدام Tableau وSQL وPower BI وExcel وأساسيات Python.",
+    "Available for Data Projects": "متاح لمشاريع البيانات",
     "View Projects": "عرض المشاريع",
     "View Resume": "عرض السيرة الذاتية",
     "Featured work": "أعمال مميزة",
@@ -309,6 +310,7 @@
     ".mini-item",
     ".hero h1",
     ".hero .lead",
+    ".availability",
     ".hero .cta",
     ".pills li",
     ".bar-row",
@@ -352,13 +354,13 @@
     });
   };
 
-  const initAuroraCanvas = () => {
+  const initShaderCanvas = () => {
     const canvas = document.getElementById("bgCanvas");
     if (!canvas || reduceMotion) return;
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
-    const state = { width: 0, height: 0, dpr: 1, time: 0, pointerX: 0.5, pointerY: 0.25 };
+    const state = { width: 0, height: 0, dpr: 1, time: 0, pointerX: 0.5, pointerY: 0.5 };
     const resize = () => {
       state.dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
       state.width = window.innerWidth;
@@ -375,55 +377,57 @@
       state.pointerY = event.clientY / Math.max(1, state.height);
     };
 
-    const drawWave = (offset, color, amplitude, speed, thickness) => {
-      const gradient = ctx.createLinearGradient(0, 0, state.width, state.height);
-      gradient.addColorStop(0, "rgba(57,214,201,0)");
-      gradient.addColorStop(0.34, color);
-      gradient.addColorStop(0.72, "rgba(242,184,75,0.18)");
-      gradient.addColorStop(1, "rgba(152,223,107,0)");
+    const drawChannel = (color, xShift, yShift, opacity, width) => {
+      const minSide = Math.max(1, Math.min(state.width, state.height));
+      const baseY = state.height * 0.48 + yShift * minSide;
+      const xScale = 2.05 + (state.pointerX - 0.5) * 0.55;
+      const yScale = 0.16 + (state.pointerY - 0.5) * 0.045;
+      const distortion = 0.065;
+      const gradient = ctx.createLinearGradient(0, baseY - minSide * 0.22, state.width, baseY + minSide * 0.22);
+      gradient.addColorStop(0, "rgba(0,0,0,0)");
+      gradient.addColorStop(0.18, color.replace("1)", "0.08)"));
+      gradient.addColorStop(0.5, color.replace("1)", opacity + ")"));
+      gradient.addColorStop(0.82, color.replace("1)", "0.08)"));
+      gradient.addColorStop(1, "rgba(0,0,0,0)");
 
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = width;
+      ctx.lineJoin = "round";
+      ctx.lineCap = "round";
+      ctx.shadowColor = color.replace("1)", "0.55)");
+      ctx.shadowBlur = 18;
       ctx.beginPath();
-      for (let x = -40; x <= state.width + 40; x += 16) {
-        const progress = x / Math.max(1, state.width);
-        const y = state.height * (0.18 + offset)
-          + Math.sin(progress * Math.PI * 2.2 + state.time * speed) * amplitude
-          + Math.sin(progress * Math.PI * 5.6 - state.time * (speed * 0.7)) * (amplitude * 0.38)
-          + (state.pointerY - 0.5) * 40;
-        if (x === -40) ctx.moveTo(x, y);
+      for (let x = -90; x <= state.width + 90; x += 7) {
+        const p = ((x * 2) - state.width) / minSide;
+        const d = Math.abs(p) * distortion;
+        const rx = p * (1 + d) + xShift + (state.pointerX - 0.5) * 0.16;
+        const y = baseY
+          + Math.sin((rx + state.time) * xScale) * minSide * yScale
+          + Math.sin((rx * 2.6 - state.time * 1.15) + yShift * 4) * minSide * 0.032
+          + (state.pointerY - 0.5) * 26;
+        if (x <= -90) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = thickness;
-      ctx.shadowColor = color;
-      ctx.shadowBlur = 28;
       ctx.stroke();
-      ctx.shadowBlur = 0;
+      ctx.restore();
     };
 
     const draw = () => {
-      state.time += 0.009;
+      state.time += 0.013;
       ctx.clearRect(0, 0, state.width, state.height);
-      ctx.globalCompositeOperation = "lighter";
-
-      const glow = ctx.createRadialGradient(
-        state.width * state.pointerX,
-        state.height * state.pointerY,
-        10,
-        state.width * state.pointerX,
-        state.height * state.pointerY,
-        Math.max(state.width, state.height) * 0.72
-      );
-      glow.addColorStop(0, "rgba(57,214,201,0.20)");
-      glow.addColorStop(0.5, "rgba(242,184,75,0.08)");
-      glow.addColorStop(1, "rgba(0,0,0,0)");
-      ctx.fillStyle = glow;
+      ctx.fillStyle = "rgba(0,0,0,0.08)";
       ctx.fillRect(0, 0, state.width, state.height);
 
-      drawWave(0.04, "rgba(57,214,201,0.24)", 48, 1.1, 34);
-      drawWave(0.23, "rgba(242,184,75,0.17)", 36, -0.9, 24);
-      drawWave(0.42, "rgba(152,223,107,0.12)", 28, 0.7, 18);
+      const layers = [-0.18, -0.09, 0, 0.09, 0.18];
+      layers.forEach((layer, index) => {
+        const fade = 0.58 - Math.abs(layer) * 1.4;
+        drawChannel("rgba(255,70,70,1)", -0.056, layer, Math.max(0.08, fade * 0.38), 1.15 + index * 0.08);
+        drawChannel("rgba(70,255,180,1)", 0, layer, Math.max(0.10, fade * 0.42), 1.2 + index * 0.08);
+        drawChannel("rgba(68,150,255,1)", 0.056, layer, Math.max(0.08, fade * 0.38), 1.15 + index * 0.08);
+      });
 
-      ctx.globalCompositeOperation = "source-over";
       window.requestAnimationFrame(draw);
     };
 
@@ -434,6 +438,6 @@
   };
 
   initPointerEffects();
-  initAuroraCanvas();
+  initShaderCanvas();
   applyLanguage(localStorage.getItem("language") === "ar" ? "ar" : "en");
 })();
