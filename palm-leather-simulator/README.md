@@ -2,19 +2,19 @@
 
 Static GitHub Pages interface for comparing date palm waste leather-alternative methodologies.
 
-## URL
+## Live URL
 
-After GitHub Pages refreshes, open:
+https://othmanxo.github.io/palm-leather-simulator/
 
-`https://othmanxo.github.io/palm-leather-simulator/`
+## Current version
 
-## What it does
+This version includes:
 
-- Shows each methodology as a selectable method card.
-- Displays the exact material generated for that method.
-- Renders a movable Three.js 3D square specimen for every methodology.
-- Animates the lab/manufacturing process steps.
-- Shows simulated performance metrics, layer structures, and ranking.
+- Working Play / Pause, Next Step, and Reset controls.
+- Smooth step-based 3D process animation.
+- A different movable 3D square material specimen for each methodology.
+- Full written details for every selected method: overview, materials, equipment, lab procedure, DOE variables, properties, risks, validation tests, patent angle, and recommendation.
+- Weighted ranking table.
 
 ## Methodologies included
 
@@ -30,4 +30,4 @@ After GitHub Pages refreshes, open:
 
 ## Notes
 
-The simulation values are hypothetical engineering planning estimates until validated by actual lab testing.
+Simulation values are hypothetical engineering planning estimates until validated by real lab testing.
